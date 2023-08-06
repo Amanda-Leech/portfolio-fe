@@ -7,6 +7,7 @@ import Project from './page/Project';
 import Contact from './page/Contact';
 import Resume from './page/Resume';
 import Skill from './page/Skill';
+import Login from './page/Login';
 
 function App() {
     return (
@@ -26,9 +27,12 @@ function App() {
                 </Route>
                 <Route path="/Project">
                     <Project />
-                    <Route path="/Skill">
-                        <Skill />
-                    </Route>
+                </Route>
+                <Route path="/Skill">
+                    <Skill />
+                </Route>
+                <Route path="/Login">
+                    <Login />
                 </Route>
                 <Route path="/page-cta">
                     <Contact />

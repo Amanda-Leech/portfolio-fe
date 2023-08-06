@@ -66,6 +66,11 @@ const Header = () => {
                                 Skills
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/Login" onClick={menuToggleHandler}>
+                                Log in
+                            </Link>
+                        </li>
                     </ul>
                     <button onClick={ctaClickHandler}>Contact me</button>
                 </nav>
