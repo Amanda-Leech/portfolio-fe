@@ -16,14 +16,15 @@ export default class PersonList extends React.Component {
     render() {
         return (
             <ul>
-                EDUCATION
-                <p>-----------</p>
+                <h1> Education </h1>
+                <br />
+                <br />
                 {this.state.educations.map((education) => (
                     <li key={education.education_id}>
                         <p> School Name: {education.school_name}</p>
                         <p>Certificate: {education.certificate}</p>
                         <p> Date Obtained: {education.date_obtained}</p>
-                        <p>-</p>
+                        <br />
                     </li>
                 ))}
             </ul>

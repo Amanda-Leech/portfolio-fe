@@ -16,14 +16,16 @@ export default class PersonList extends React.Component {
     render() {
         return (
             <ul>
-                PROJECTS
-                <p>----------</p>
+                <h1>Projects</h1>
+                <br />
+                <br />
                 {this.state.projects.map((project) => (
                     <li key={project.project_id}>
                         <p> Title: {project.project_title}</p>
                         <p>URL: {project.project_url}</p>
                         <p>GIT: {project.git_url}</p>
                         <p>Info: {project.project_info}</p>
+                        <br />
                     </li>
                 ))}
             </ul>

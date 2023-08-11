@@ -8,6 +8,7 @@ import Contact from './page/Contact';
 import Resume from './page/Resume';
 import Skill from './page/Skill';
 import Login from './page/Login';
+import Info from './page/Info';
 
 function App() {
     return (
@@ -30,6 +31,9 @@ function App() {
                 </Route>
                 <Route path="/Skill">
                     <Skill />
+                </Route>
+                <Route path="/Info">
+                    <Info />
                 </Route>
                 <Route path="/Login">
                     <Login />
