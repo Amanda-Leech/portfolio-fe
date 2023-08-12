@@ -41,7 +41,7 @@ const Login = () => {
             } else if (err.response?.status === 400) {
                 setErrMsg('Missing Email or Password');
             } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized');
+                setErrMsg('Incorect Email or Password');
             } else {
                 setErrMsg('Login Failed');
             }
@@ -64,7 +64,7 @@ const Login = () => {
                     <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live="assertive">
                         {errMsg}
                     </p>
-                    <h1>Login</h1>
+                    <h1>Edit</h1>
                     <br />
                     <br />
                     <form onSubmit={handleSubmit}>

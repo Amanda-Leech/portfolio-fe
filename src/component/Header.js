@@ -73,7 +73,7 @@ const Header = () => {
                         </li>
                         <li>
                             <Link to="/Login" onClick={menuToggleHandler}>
-                                Log in
+                                Edit
                             </Link>
                         </li>
                     </ul>

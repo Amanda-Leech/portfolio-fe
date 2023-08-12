@@ -21,8 +21,8 @@ Info about the item itself
 Appropriate links to showcase (code sandbox, repl.it, GitHub, etc)
 Contact Page
 Submission form
-X Embedded Map that centers on your city (a map is good enough if you're not comfortable with your location being shared)
-Personal Admin Login Page
+X Embedded Map that centers on your city
+X Personal Admin Login Page
 Inbox
 The contact form will submit to your own inbox that you can see when you're logged in
 Add / Edit Page or Pages for the Portfolio Items

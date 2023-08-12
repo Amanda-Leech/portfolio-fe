@@ -9,6 +9,10 @@ import Resume from './page/Resume';
 import Skill from './page/Skill';
 import Login from './page/Login';
 import Info from './page/Info';
+import EditAbout from './page/editPage/EditAbout';
+import EditInfo from './page/editPage/EditInfo';
+import EditCover from './page/editPage/EditCover';
+import ReadMessage from './page/editPage/ReadMessage';
 
 function App() {
     return (
@@ -17,8 +21,14 @@ function App() {
                 <Route path="/" exact>
                     <About />
                 </Route>
+                <Route path="/EditAbout">
+                    <EditAbout />
+                </Route>
                 <Route path="/Cover">
                     <Cover />
+                </Route>
+                <Route path="/EditCover">
+                    <EditCover />
                 </Route>
                 <Route path="/Resume">
                     <Resume />
@@ -35,11 +45,17 @@ function App() {
                 <Route path="/Info">
                     <Info />
                 </Route>
+                <Route path="/EditInfo">
+                    <EditInfo />
+                </Route>
                 <Route path="/Login">
                     <Login />
                 </Route>
                 <Route path="/page-cta">
                     <Contact />
+                </Route>
+                <Route path="/ReadMessage">
+                    <ReadMessage />
                 </Route>
             </Switch>
         </Layout>
