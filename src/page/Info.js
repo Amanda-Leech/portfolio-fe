@@ -23,9 +23,11 @@ export default class PersonList extends React.Component {
                     <ul key={contact.contact_id}>
                         <p> Name: {contact.contact_name}</p>
                         <br />
-                        <p> LinkedIn: {contact.linked_ine}</p>
+                        <a href={contact.linked_in}> LinkedIn: {contact.linked_in}</a>
                         <br />
-                        <p> Github: {contact.git_hub}</p>
+                        <br />
+                        <a href={contact.git_hub}> Github: {contact.git_hub}</a>
+                        <br />
                         <br />
                         <p> Phone: {contact.phone}</p>
                         <br />

@@ -12,7 +12,7 @@ function EditAbout() {
     function handleSubmit(event) {
         event.preventDefault();
         axios
-            .post(`http://localhost:5000/about/Amanda`, { post })
+            .put(`http://localhost:5000/about/Amanda`, { post })
             .then((response) => console.log(response))
             .catch((err) => console.log(err));
     }

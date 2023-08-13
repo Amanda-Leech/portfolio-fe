@@ -16,13 +16,14 @@ export default class PersonList extends React.Component {
     render() {
         return (
             <ul>
-                SKILLS
-                <p>------</p>
+                <h1> Skills </h1>
+                <br />
+                <br />
                 {this.state.skills.map((skill) => (
                     <li key={skill.skill_id}>
                         <p> Skill: {skill.skill_name}</p>
-                        <p> Use: {skill.skill_use}</p>
-                        <p>-</p>
+                        <p> Project: {skill.skill_use}</p>
+                        <br />
                     </li>
                 ))}
             </ul>

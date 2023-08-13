@@ -43,7 +43,7 @@ const Header = () => {
                     <ul>
                         <li>
                             <Link to="/EditCover" onClick={menuToggleHandler}>
-                                Cover
+                                Cover Letter
                             </Link>
                         </li>
                         <li>
