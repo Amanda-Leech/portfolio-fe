@@ -22,7 +22,7 @@ const Header = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
     useEffect(() => {
-        if (size.width > 768 && menuOpen) {
+        if (size.width > 1120 && menuOpen) {
             setMenuOpen(false);
         }
     }, [size.width, menuOpen]);
@@ -31,18 +31,18 @@ const Header = () => {
     };
     const ctaClickHandler = () => {
         menuToggleHandler();
-        history.push('/page-cta');
+        history.push('/ReadMessage');
     };
     return (
         <header className={classes.header}>
             <div className={classes.header__content}>
-                <Link to="/" className={classes.header__content__logo}>
+                <Link to="/EditAbout" className={classes.header__content__logo}>
                     Home
                 </Link>
                 <nav className={`${classes.header__content__nav} ${menuOpen && size.width < 768 ? classes.isMenu : ''}`}>
                     <ul>
                         <li>
-                            <Link to="/Cover" onClick={menuToggleHandler}>
+                            <Link to="/EditCover" onClick={menuToggleHandler}>
                                 Cover
                             </Link>
                         </li>
@@ -67,15 +67,25 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Info" onClick={menuToggleHandler}>
+                            <Link to="/EditInfo" onClick={menuToggleHandler}>
                                 My Info
                             </Link>
                         </li>
+                        {/* <li>
+                            <Link to="/Auth" onClick={menuToggleHandler}>
+                                Auth
+                            </Link>
+                        </li> */}
                         <li>
                             <Link to="/Login" onClick={menuToggleHandler}>
                                 Edit
                             </Link>
                         </li>
+                        {/* <li>
+                            <Link to="/ReadMessage" onClick={menuToggleHandler}>
+                                Contact Me
+                            </Link>
+                        </li> */}
                     </ul>
                     <button onClick={ctaClickHandler}>Contact me</button>
                 </nav>

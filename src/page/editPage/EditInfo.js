@@ -27,9 +27,9 @@ function EditInfo() {
             <br />
             <div className="form-input">
                 <form onSubmit={handleSubmit}>
-                    Name: <input type="text" onChange={handleInput} name="contact_name"></input>
+                    {/* Name: <input type="text" onChange={handleInput} name="contact_name"></input>
                     <br />
-                    <br />
+                    <br /> */}
                     LinkedIn: <input type="text" onChange={handleInput} name="linked_in"></input>
                     <br />
                     <br />

@@ -12,7 +12,7 @@ function EditCover() {
     function handleSubmit(event) {
         event.preventDefault();
         axios
-            .post(`http://localhost:5000/cover`, { post })
+            .post(`http://localhost:5000/cover/Amanda`, { post })
             .then((response) => console.log(response))
             .catch((err) => console.log(err));
     }
@@ -23,9 +23,9 @@ function EditCover() {
             <br />
             <div className="form-input">
                 <form onSubmit={handleSubmit}>
-                    Title: <input type="text" onChange={handleInput} name="cover_title"></input>
+                    {/* Title: <input type="text" onChange={handleInput} name="cover_title"></input>
                     <br />
-                    <br />
+                    <br /> */}
                     Info: <input type="text" onChange={handleInput} name="cover_info"></input>
                     <br />
                     <br />

@@ -12,25 +12,25 @@ function EditAbout() {
     function handleSubmit(event) {
         event.preventDefault();
         axios
-            .post(`http://localhost:5000/about`, { post })
+            .post(`http://localhost:5000/about/Amanda`, { post })
             .then((response) => console.log(response))
             .catch((err) => console.log(err));
     }
     return (
         <div className="form-container">
-            <h1>About me</h1>
+            <h1>About Me</h1>
             <br />
             <br />
             <div className="form-input">
                 <form onSubmit={handleSubmit}>
-                    Title: <input type="text" onChange={handleInput} name="about_title"></input>
+                    {/* Title: <input type="text" onChange={handleInput} name="about_title"></input>
                     <br />
-                    <br />
+                    <br /> */}
                     Info: <input type="text" onChange={handleInput} name="about_info"></input>
                     <br />
                     <br />
                     <button className="btn btn-primary">Submit</button>
-                    <button className="btn btn-secondary">Logout</button>
+                    {/* <button className="btn btn-secondary">Logout</button> */}
                 </form>
             </div>
         </div>

@@ -7,7 +7,7 @@ export default class PersonList extends React.Component {
     };
 
     componentDidMount() {
-        axios.get(`http://localhost:5000/about/9a0e2342-59bb-4772-b6f2-f84a0f64b353`).then((res) => {
+        axios.get(`http://localhost:5000/about/Amanda`).then((res) => {
             const abouts = res.data;
             this.setState({ abouts });
         });
@@ -21,9 +21,9 @@ export default class PersonList extends React.Component {
                 <br />
                 {this.state.abouts.map((about) => (
                     <ul key={about.about_id}>
-                        <p> Title: {about.about_title}</p>
-                        <br />
-                        <p> Info: {about.about_info}</p>
+                        {/* <p> Title: {about.about_title}</p>
+                        <br /> */}
+                        <p> {about.about_info}</p>
                     </ul>
                 ))}
             </ul>

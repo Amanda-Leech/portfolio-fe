@@ -7,7 +7,7 @@ export default class PersonList extends React.Component {
     };
 
     componentDidMount() {
-        axios.get(`http://localhost:5000/contact/259526b9-731a-415f-875c-855e296bec89`).then((res) => {
+        axios.get(`http://localhost:5000/contact/Amanda_Leech`).then((res) => {
             const contacts = res.data;
             this.setState({ contacts });
         });
@@ -30,6 +30,7 @@ export default class PersonList extends React.Component {
                         <p> Phone: {contact.phone}</p>
                         <br />
                         <p> Email: {contact.email}</p>
+                        <br />
                         <a href="https://goo.gl/maps/q4YGut4UyBBVcHA48" className="address-link" target="_blank" rel="noreferrer">
                             {' '}
                             Address: {contact.address}

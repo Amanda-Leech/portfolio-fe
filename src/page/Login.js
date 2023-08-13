@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from '../component/AuthProvider';
+import Cookies from 'js-cookie';
 import axios from '../component/axios';
 const LOGIN_URL = '/user/auth';
 
@@ -24,14 +25,19 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(LOGIN_URL, JSON.stringify({ email: email, password }), {
+            const response = await axios.post(LOGIN_URL, JSON.stringify({ email, password }), {
                 headers: { 'Content-Type': 'application/json' },
                 // withCredentials: true,
             });
             console.log(JSON.stringify(response?.data));
             const auth = response?.data?.auth;
             const role = response?.data?.role;
-            setAuth({ email, password, role, auth });
+            const expiration = response?.data?.expiration;
+            setAuth({ email, password, role, auth, expiration });
+            Cookies.set('auth_token', auth);
+            Cookies.set('user_role', role);
+            Cookies.set('user_name', email);
+            Cookies.set('auth_expires', expiration);
             setUser('');
             setPwd('');
             setSuccess(true);
@@ -69,7 +75,7 @@ const Login = () => {
                     <br />
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">Email: </label>
-                        <input type="text" id="email" ref={emailRef} autocomplete="off" onChange={(e) => setUser(e.target.value)} value={email} required />
+                        <input type="text" id="email" ref={emailRef} autoComplete="off" onChange={(e) => setUser(e.target.value)} value={email} required />
                         <br />
                         <br />
                         <label htmlFor="password">Password: </label>

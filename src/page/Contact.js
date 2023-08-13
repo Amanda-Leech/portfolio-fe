@@ -14,7 +14,7 @@ function Contact() {
     function handleSubmit(event) {
         event.preventDefault();
         axios
-            .post(`http://localhost:5000/contact`, { post })
+            .post(`http://localhost:5000/contact/Amanda_Leech`, { post })
             .then((response) => console.log(response))
             .catch((err) => console.log(err));
     }
