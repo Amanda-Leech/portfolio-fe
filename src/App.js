@@ -14,8 +14,8 @@ import Info from './page/Info';
 import EditAbout from './page/editPage/EditAbout';
 import EditInfo from './page/editPage/EditInfo';
 import EditCover from './page/editPage/EditCover';
-import EditProject from './page/editPage/projects/EditProject';
-import AddProject from './page/editPage/projects/AddProject';
+import EditProject from './page/editPage/projects/Eprojects';
+import AddProject from './page/editPage/projects/Aproject';
 import UpdateProject from './page/editPage/projects/UpdateProject';
 import DeleteProject from './page/editPage/projects/DeleteProject';
 import ReadMessage from './page/editPage/ReadMessage';
@@ -65,10 +65,10 @@ function App() {
                 <PrivateProject path="/AddProject">
                     <AddProject />
                 </PrivateProject>
-                <PrivateProject path="/DeleteProject">
+                <PrivateProject path="/project/delete/:id">
                     <DeleteProject />
                 </PrivateProject>
-                <PrivateProject path="/UpdateProject">
+                <PrivateProject path="/project/:id">
                     <UpdateProject />
                 </PrivateProject>
                 <Route path="/Project">

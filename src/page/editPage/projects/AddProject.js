@@ -14,7 +14,7 @@ function AddProject() {
     function handleSubmit(event) {
         event.preventDefault();
         axios
-            .post(`http://localhost:5000/project`, { post })
+            .post('http://localhost:5000/project', { post })
             .then((response) => console.log(response))
             .catch((err) => console.log(err));
     }

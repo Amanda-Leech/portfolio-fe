@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default class PersonList extends React.Component {
     state = {
@@ -18,6 +19,11 @@ export default class PersonList extends React.Component {
             <ul>
                 <h1> Projects </h1>
                 <br />
+                <div className="text-end">
+                    <Link to="/AddProject" className="btn btn-primary">
+                        Add Project
+                    </Link>
+                </div>
                 <br />
                 {this.state.projects.map((project) => (
                     <li key={project.project_id}>
@@ -25,6 +31,16 @@ export default class PersonList extends React.Component {
                         <p> URL: {project.project_url}</p>
                         <a href={project.git_url}> Git URL: {project.git_url}</a>
                         <p> Info: {project.project_info}</p>
+                        <p>
+                            <Link to={`/project/${project.project_id}`} className="btn btn-success">
+                                Update
+                            </Link>
+                            {'  '}/{'  '}
+                            <Link to={`project/delete/${project.project_id}`} className="btn btn-danger">
+                                Delete
+                            </Link>
+                        </p>
+                        <br />
                         <br />
                     </li>
                 ))}

@@ -1,43 +1,50 @@
-import React, { useState } from 'react';
 import axios from 'axios';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Contact() {
-    const [post, setPost] = useState({
-        message_name: '',
-        message_email: '',
-        message_subject: '',
-        message: '',
-    });
-    const handleInput = (event) => {
-        setPost({ ...post, [event.target.name]: event.target.value });
-    };
+    const [inputData, setInputData] = useState({ message_name: '', message_email: '', message_subject: '', message: '' });
+    const navigate = useHistory();
     function handleSubmit(event) {
         event.preventDefault();
+
         axios
-            .post(`http://localhost:5000/message`, { post })
-            .then((response) => console.log(response))
+            .post('http://localhost:5000/message', inputData)
+            .then((res) => {
+                alert('Message sent');
+                navigate('/Project');
+            })
             .catch((err) => console.log(err));
     }
+
     return (
-        <div className="form-container">
-            <h1>Contact Me</h1>
-            <br />
-            <br />
-            <div className="form-input">
+        <div className="d-flex w-100 vh-100 justify-content-center align-items-center">
+            <div className="w-50 border bg-light p-5">
                 <form onSubmit={handleSubmit}>
-                    Name: <input type="text" onChange={handleInput} name="message_name"></input>
+                    <h1>Contact Me</h1>
                     <br />
                     <br />
-                    Email: <input type="text" onChange={handleInput} name="message_email"></input>
+                    <div>
+                        <label htmlFor="message_name">Name: </label>
+                        <input type="text" name="message_name" className="form-control" onChange={(e) => setInputData({ ...inputData, message_name: e.target.value })} />
+                    </div>
                     <br />
+                    <div>
+                        <label htmlFor="message_email">Email: </label>
+                        <input type="text" name="message_email" className="form-control" onChange={(e) => setInputData({ ...inputData, message_email: e.target.value })} />
+                    </div>
                     <br />
-                    Subject: <input type="text" onChange={handleInput} name="message_subject"></input>
+                    <div>
+                        <label htmlFor="message_subject">Subject: </label>
+                        <input type="text" name="message_subject" className="form-control" onChange={(e) => setInputData({ ...inputData, message_subject: e.target.value })} />
+                    </div>
                     <br />
+                    <div>
+                        <label htmlFor="message">Message: </label>
+                        <input type="text" name="message" className="form-control" onChange={(e) => setInputData({ ...inputData, message: e.target.value })} />
+                    </div>
                     <br />
-                    Message: <input type="text" onChange={handleInput} name="message"></input>
-                    <br />
-                    <br />
-                    <button className="btn btn-primary">Submit</button>
+                    <button className="btn btn-info">Submit</button>
                 </form>
             </div>
         </div>
