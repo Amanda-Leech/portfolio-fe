@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-function PrivateMessage({ children, ...rest }) {
+function PrivateProject({ children, ...rest }) {
     return (
         <Route
             {...rest}
@@ -12,7 +12,7 @@ function PrivateMessage({ children, ...rest }) {
                 ) : (
                     <Redirect
                         to={{
-                            pathname: '/page-cta',
+                            pathname: '/Project',
                             state: { from: location },
                         }}
                     />
@@ -22,4 +22,4 @@ function PrivateMessage({ children, ...rest }) {
     );
 }
 
-export default PrivateMessage;
+export default PrivateProject;

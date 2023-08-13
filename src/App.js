@@ -14,12 +14,17 @@ import Info from './page/Info';
 import EditAbout from './page/editPage/EditAbout';
 import EditInfo from './page/editPage/EditInfo';
 import EditCover from './page/editPage/EditCover';
+import EditProject from './page/editPage/projects/EditProject';
+import AddProject from './page/editPage/projects/AddProject';
+import UpdateProject from './page/editPage/projects/UpdateProject';
+import DeleteProject from './page/editPage/projects/DeleteProject';
 import ReadMessage from './page/editPage/ReadMessage';
 import Auth from './component/routes/Private';
 // import PrivateRoute from './component/routes/Proute';
 import PrivateCover from './component/routes/Pcover';
 import PrivateMessage from './component/routes/Pmessages';
 import PrivateAbout from './component/routes/Pabout';
+import PrivateProject from './component/routes/Pproject';
 // import AboutRoute from '.component/routes/EAbout';
 
 function App() {
@@ -54,6 +59,18 @@ function App() {
                     <Education />
                 </Route>
 
+                <PrivateProject path="/EditProject">
+                    <EditProject />
+                </PrivateProject>
+                <PrivateProject path="/AddProject">
+                    <AddProject />
+                </PrivateProject>
+                <PrivateProject path="/DeleteProject">
+                    <DeleteProject />
+                </PrivateProject>
+                <PrivateProject path="/UpdateProject">
+                    <UpdateProject />
+                </PrivateProject>
                 <Route path="/Project">
                     <Project />
                 </Route>
