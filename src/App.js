@@ -2,28 +2,30 @@ import Layout from './component/Layout';
 import { Switch, Route } from 'react-router-dom';
 // import { CookiesProvider, useCookies } from 'react-cookie';
 // import ProtectedRoute from './component/routes/Auth';
-import About from './page/About';
+import About from './page/about/Rabout';
 import Cover from './page/Cover';
-import Education from './page/Education';
+import Education from './page/education/Reducation';
 import Project from './page/Project';
-import Contact from './page/Contact';
+import Contact from './page/messages/Cmessage';
 import Resume from './page/Resume';
-import Skill from './page/Skill';
+import Skill from './page/skills/Rskill';
 import Login from './page/Login';
 import Info from './page/Info';
-import EditAbout from './page/editPage/EditAbout';
+import UpdateAbout from './page/about/Uabout';
 import EditInfo from './page/editPage/EditInfo';
 import EditCover from './page/editPage/EditCover';
-import EditProject from './page/editPage/projects/Eprojects';
-import EditEducation from './page/editPage/education/Eeducation';
-import EditSkill from './page/editPage/skills/Eskill';
-import AddProject from './page/editPage/projects/Aproject';
-import AddSkill from './page/editPage/skills/Askill';
-import AddEducation from './page/editPage/education/Aeducation';
-import UpdateProject from './page/editPage/projects/UpdateProject';
-// import UpdateSkill from './page/editPage/skills/UpdateSkill';
-import DeleteProject from './page/editPage/projects/DeleteProject';
-import ReadMessage from './page/editPage/ReadMessage';
+import EditProject from './page/projects/Eprojects';
+import EditEducation from './page/education/Eeducation';
+import EditSkill from './page/skills/Eskill';
+import EditAbout from './page/about/Eabout';
+import AddProject from './page/projects/Aproject';
+import AddSkill from './page/skills/Cskill';
+import AddEducation from './page/education/Ceducation';
+import UpdateProject from './page/projects/Uproject';
+import UpdateSkill from './page/skills/USkill';
+import UpdateEducation from './page/education/Ueducation';
+import DeleteProject from './page/projects/DeleteProject';
+import ReadMessage from './page/messages/Rmessage';
 import Auth from './component/routes/Private';
 // import PrivateRoute from './component/routes/Proute';
 import PrivateCover from './component/routes/Pcover';
@@ -48,8 +50,11 @@ function App() {
                 <Route path="/" exact>
                     <About />
                 </Route>
-                <PrivateAbout path="/EditAbout" exact>
+                <PrivateAbout path="/EditAbout">
                     <EditAbout />
+                </PrivateAbout>
+                <PrivateAbout path="/about/id/">
+                    <UpdateAbout />
                 </PrivateAbout>
 
                 {/* COVER */}
@@ -66,7 +71,7 @@ function App() {
                 </Route>
 
                 {/* EDUCATION */}
-                <Route path="/education">
+                <Route path="/education" exact>
                     <Education />
                 </Route>
                 <PrivateEducation path="/edit-education">
@@ -77,10 +82,10 @@ function App() {
                 </PrivateEducation>
                 {/* <PrivateProject path="/project/delete/:id">
                     <DeleteProject />
-                </PrivateProject>
-                <PrivateProject path="/project/:id">
-                    <UpdateProject />
                 </PrivateProject> */}
+                <PrivateProject path="/education/:id">
+                    <UpdateEducation />
+                </PrivateProject>
 
                 {/* PROJECT */}
                 <PrivateProject path="/EditProject">
@@ -95,12 +100,12 @@ function App() {
                 <PrivateProject path="/project/:id">
                     <UpdateProject />
                 </PrivateProject>
-                <Route path="/Project">
+                <Route path="/Project" exact>
                     <Project />
                 </Route>
 
                 {/* SKILL */}
-                <Route path="/Skill">
+                <Route path="/Skill" exact>
                     <Skill />
                 </Route>
                 <PrivateSkill path="/edit-skill">
@@ -112,9 +117,9 @@ function App() {
                 {/* <PrivateSkill path="/skill/delete/:id">
                     <DeleteSkill />
                 </PrivateSkill> */}
-                {/* <PrivateSkill path="/skill/:id">
+                <PrivateSkill path="/skill/:id">
                     <UpdateSkill />
-                </PrivateSkill> */}
+                </PrivateSkill>
 
                 {/* INFO */}
                 <Route path="/Info">
