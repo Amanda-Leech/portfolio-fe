@@ -15,7 +15,9 @@ import EditAbout from './page/editPage/EditAbout';
 import EditInfo from './page/editPage/EditInfo';
 import EditCover from './page/editPage/EditCover';
 import EditProject from './page/editPage/projects/Eprojects';
+import EditSkill from './page/editPage/skills/Eskill';
 import AddProject from './page/editPage/projects/Aproject';
+import AddSkill from './page/editPage/skills/Askill';
 import UpdateProject from './page/editPage/projects/UpdateProject';
 import DeleteProject from './page/editPage/projects/DeleteProject';
 import ReadMessage from './page/editPage/ReadMessage';
@@ -26,6 +28,7 @@ import PrivateMessage from './component/routes/Pmessages';
 import PrivateAbout from './component/routes/Pabout';
 import PrivateProject from './component/routes/Pproject';
 import PrivateInfo from './component/routes/Pinfo';
+import PrivateSkill from './component/routes/Pskill';
 // import AboutRoute from '.component/routes/EAbout';
 
 function App() {
@@ -37,14 +40,15 @@ function App() {
         // <CookiesProvider>
         <Layout>
             <Switch>
+                {/* ABOUT */}
                 <Route path="/About">
                     <About />
                 </Route>
-                {/* <PrivateAbout exact={true} path="/" component={EditAbout} /> */}
                 <PrivateAbout path="/EditAbout" exact>
                     <EditAbout />
                 </PrivateAbout>
 
+                {/* COVER */}
                 <PrivateCover path="/EditCover">
                     <EditCover />
                 </PrivateCover>
@@ -52,14 +56,17 @@ function App() {
                     <Cover />
                 </Route>
 
+                {/* RESUME */}
                 <Route path="/Resume">
                     <Resume />
                 </Route>
 
+                {/* EDUCATION */}
                 <Route path="/Education">
                     <Education />
                 </Route>
 
+                {/* PROJECT */}
                 <PrivateProject path="/EditProject">
                     <EditProject />
                 </PrivateProject>
@@ -76,10 +83,24 @@ function App() {
                     <Project />
                 </Route>
 
+                {/* SKILL */}
                 <Route path="/Skill">
                     <Skill />
                 </Route>
+                <PrivateSkill path="/edit-skill">
+                    <EditSkill />
+                </PrivateSkill>
+                <PrivateSkill path="/add-skill">
+                    <AddSkill />
+                </PrivateSkill>
+                {/* <PrivateSkill path="/skill/delete/:id">
+                    <DeleteSkill />
+                </PrivateSkill>
+                <PrivateSkill path="/skill/:id">
+                    <UpdateSkill />
+                </PrivateSkill> */}
 
+                {/* INFO */}
                 <Route path="/Info">
                     <Info />
                 </Route>
@@ -87,6 +108,7 @@ function App() {
                     <EditInfo />
                 </PrivateInfo>
 
+                {/* MESSAGE */}
                 <Route path="/page-cta">
                     <Contact />
                 </Route>
@@ -94,6 +116,7 @@ function App() {
                     <ReadMessage />
                 </PrivateMessage>
 
+                {/* AURHORIZATON */}
                 <Route path="/Login">
                     <Login />
                 </Route>

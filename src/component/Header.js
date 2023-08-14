@@ -62,7 +62,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Skill" onClick={menuToggleHandler}>
+                            <Link to="/edit-skill" onClick={menuToggleHandler}>
                                 Skills
                             </Link>
                         </li>
