@@ -12,12 +12,24 @@ function UpdateProject() {
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     }, [id]);
+    // function handleSubmit(event) {
+    //     event.preventDefault();
+    //     axios.put('http://localhost:5000/project/' + id, data).then((res) => {
+    //         alert('Update Successful!');
+    //         navigate('/');
+    //     });
+    // }
     function handleSubmit(event) {
         event.preventDefault();
-        axios.put('http://localhost:5000/project/' + id, data).then((res) => {
-            alert('Update Successful!');
-            navigate('/');
-        });
+        axios
+            .put('http://localhost:5000/project/' + id, JSON.stringify({ data }), {
+                headers: { 'Content-Type': 'application/json' },
+                // withCredentials: true,
+            })
+            .then((res) => {
+                alert('Update Successful!');
+                // navigate('/');
+            });
     }
     return (
         <div className="d-flex w-100 vh-100 justify-content-center align-items-center">
@@ -33,7 +45,7 @@ function UpdateProject() {
                     <br />
                     <div>
                         <label htmlFor="project_title">Project Title: </label>
-                        <input type="text" name="project_title" value={data.project_title} className="form-control" onChange={(e) => setData({ ...data, project_title: e.target.ariaValueNow })} />
+                        <input type="text" name="project_title" value={data.project_title} /> className="form-control" onChange={(e) => setData({ ...data, project_title: e.target.ariaValueNow })} />
                     </div>
                     <br />
                     <div>

@@ -21,6 +21,7 @@ import AddProject from './page/editPage/projects/Aproject';
 import AddSkill from './page/editPage/skills/Askill';
 import AddEducation from './page/editPage/education/Aeducation';
 import UpdateProject from './page/editPage/projects/UpdateProject';
+// import UpdateSkill from './page/editPage/skills/UpdateSkill';
 import DeleteProject from './page/editPage/projects/DeleteProject';
 import ReadMessage from './page/editPage/ReadMessage';
 import Auth from './component/routes/Private';
@@ -110,8 +111,8 @@ function App() {
                 </PrivateSkill>
                 {/* <PrivateSkill path="/skill/delete/:id">
                     <DeleteSkill />
-                </PrivateSkill>
-                <PrivateSkill path="/skill/:id">
+                </PrivateSkill> */}
+                {/* <PrivateSkill path="/skill/:id">
                     <UpdateSkill />
                 </PrivateSkill> */}
 
