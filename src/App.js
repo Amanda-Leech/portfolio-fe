@@ -15,9 +15,11 @@ import EditAbout from './page/editPage/EditAbout';
 import EditInfo from './page/editPage/EditInfo';
 import EditCover from './page/editPage/EditCover';
 import EditProject from './page/editPage/projects/Eprojects';
+import EditEducation from './page/editPage/education/Eeducation';
 import EditSkill from './page/editPage/skills/Eskill';
 import AddProject from './page/editPage/projects/Aproject';
 import AddSkill from './page/editPage/skills/Askill';
+import AddEducation from './page/editPage/education/Aeducation';
 import UpdateProject from './page/editPage/projects/UpdateProject';
 import DeleteProject from './page/editPage/projects/DeleteProject';
 import ReadMessage from './page/editPage/ReadMessage';
@@ -29,6 +31,7 @@ import PrivateAbout from './component/routes/Pabout';
 import PrivateProject from './component/routes/Pproject';
 import PrivateInfo from './component/routes/Pinfo';
 import PrivateSkill from './component/routes/Pskill';
+import PrivateEducation from './component/routes/Peducation';
 // import AboutRoute from '.component/routes/EAbout';
 
 function App() {
@@ -62,9 +65,21 @@ function App() {
                 </Route>
 
                 {/* EDUCATION */}
-                <Route path="/Education">
+                <Route path="/education">
                     <Education />
                 </Route>
+                <PrivateEducation path="/edit-education">
+                    <EditEducation />
+                </PrivateEducation>
+                <PrivateEducation path="/add-education">
+                    <AddEducation />
+                </PrivateEducation>
+                {/* <PrivateProject path="/project/delete/:id">
+                    <DeleteProject />
+                </PrivateProject>
+                <PrivateProject path="/project/:id">
+                    <UpdateProject />
+                </PrivateProject> */}
 
                 {/* PROJECT */}
                 <PrivateProject path="/EditProject">
