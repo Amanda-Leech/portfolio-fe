@@ -13,7 +13,7 @@ function PrivateAbout({ children, ...rest }) {
                 ) : (
                     <Redirect
                         to={{
-                            pathname: '/About',
+                            pathname: '/',
                             state: { from: location },
                         }}
                     />
