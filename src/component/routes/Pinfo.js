@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+// import AdminPrivateRoute from './Private';
 import Cookies from 'js-cookie';
 
-function PrivateProject({ children, ...rest }) {
+function PrivateInfo({ children, ...rest }) {
     return (
         <Route
             {...rest}
@@ -12,7 +13,7 @@ function PrivateProject({ children, ...rest }) {
                 ) : (
                     <Redirect
                         to={{
-                            pathname: '/Project',
+                            pathname: '/Info',
                             state: { from: location },
                         }}
                     />
@@ -22,4 +23,4 @@ function PrivateProject({ children, ...rest }) {
     );
 }
 
-export default PrivateProject;
+export default PrivateInfo;

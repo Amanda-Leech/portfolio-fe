@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, Link } from 'react-router-dom';
 
 export default class PersonList extends React.Component {
     state = {
@@ -46,5 +46,17 @@ export default class PersonList extends React.Component {
                 ))}
             </ul>
         );
+        // function handleSubmit(id) {
+        //         const conf = window.confirm('Are you sure?');
+        //         if (conf) {
+        //             axios
+        //                 .delete('/project/delete/' + id)
+        //                 .then((res) => {
+        //                     alert('Deleted');
+        //                     navigate('/');
+        //                 })
+        //                 .catch((err) => console.log(err));
+        //     }
+        // }
     }
 }

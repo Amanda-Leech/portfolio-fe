@@ -25,6 +25,7 @@ import PrivateCover from './component/routes/Pcover';
 import PrivateMessage from './component/routes/Pmessages';
 import PrivateAbout from './component/routes/Pabout';
 import PrivateProject from './component/routes/Pproject';
+import PrivateInfo from './component/routes/Pinfo';
 // import AboutRoute from '.component/routes/EAbout';
 
 function App() {
@@ -82,9 +83,9 @@ function App() {
                 <Route path="/Info">
                     <Info />
                 </Route>
-                <Route path="/EditInfo">
+                <PrivateInfo path="/EditInfo">
                     <EditInfo />
-                </Route>
+                </PrivateInfo>
 
                 <Route path="/page-cta">
                     <Contact />

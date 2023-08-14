@@ -59,7 +59,7 @@ const Login = () => {
         <>
             {success ? (
                 <section>
-                    <h1>You are logged in!</h1>
+                    <h1>You can now edit your info!</h1>
                     <br />
                     {/* <p>
                             <a href="#">Go to Home</a>

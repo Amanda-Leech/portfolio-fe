@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 // import AdminPrivateRoute from './Private';
 import Cookies from 'js-cookie';
 
