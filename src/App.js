@@ -44,7 +44,7 @@ function App() {
         <Layout>
             <Switch>
                 {/* ABOUT */}
-                <Route path="/About">
+                <Route path="/" exact>
                     <About />
                 </Route>
                 <PrivateAbout path="/EditAbout" exact>
@@ -130,6 +130,9 @@ function App() {
                 <PrivateMessage path="/ReadMessage">
                     <ReadMessage />
                 </PrivateMessage>
+                {/* <PrivateMessage path="/message/delete/:id">
+                    <DeleteMessage />
+                </PrivateMessage> */}
 
                 {/* AURHORIZATON */}
                 <Route path="/Login">
