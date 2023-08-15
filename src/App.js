@@ -3,17 +3,17 @@ import { Switch, Route } from 'react-router-dom';
 // import { CookiesProvider, useCookies } from 'react-cookie';
 // import ProtectedRoute from './component/routes/Auth';
 import About from './page/about/Rabout';
-import Cover from './page/Cover';
+import Cover from './page/cover/Rcover';
 import Education from './page/education/Reducation';
 import Project from './page/Project';
 import Contact from './page/messages/Cmessage';
-import Resume from './page/Resume';
+import Resume from './page/resume/Resume';
 import Skill from './page/skills/Rskill';
 import Login from './page/Login';
 import Info from './page/Info';
 import UpdateAbout from './page/about/Uabout';
 import EditInfo from './page/editPage/EditInfo';
-import EditCover from './page/editPage/EditCover';
+import EditCover from './page/cover/Ecover';
 import EditProject from './page/projects/Eprojects';
 import EditEducation from './page/education/Eeducation';
 import EditSkill from './page/skills/Eskill';
@@ -24,6 +24,7 @@ import AddEducation from './page/education/Ceducation';
 import UpdateProject from './page/projects/Uproject';
 import UpdateSkill from './page/skills/USkill';
 import UpdateEducation from './page/education/Ueducation';
+import UpdateCover from './page/cover/Ucover';
 import DeleteProject from './page/projects/DeleteProject';
 import ReadMessage from './page/messages/Rmessage';
 import Auth from './component/routes/Private';
@@ -60,6 +61,9 @@ function App() {
                 {/* COVER */}
                 <PrivateCover path="/EditCover">
                     <EditCover />
+                </PrivateCover>
+                <PrivateCover path="/cover/id/:id">
+                    <UpdateCover />
                 </PrivateCover>
                 <Route path="/Cover">
                     <Cover />
