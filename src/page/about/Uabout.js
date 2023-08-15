@@ -24,7 +24,7 @@ function UpdateAbout() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        axios.put('http://localhost:5000/about/id/' + id, JSON.stringify({ about_title, about_info }), {
+        axios.put('http://localhost:5000/about/' + id, JSON.stringify({ about_title, about_info }), {
             headers: { 'Content-Type': 'application/json' },
             // withCredentials: true,
         });

@@ -53,7 +53,7 @@ function App() {
                 <PrivateAbout path="/EditAbout">
                     <EditAbout />
                 </PrivateAbout>
-                <PrivateAbout path="/about/id/">
+                <PrivateAbout path="/about/id/:id">
                     <UpdateAbout />
                 </PrivateAbout>
 
