@@ -10,9 +10,9 @@ import Contact from './page/messages/Cmessage';
 import Resume from './page/resume/Resume';
 import Skill from './page/skills/Rskill';
 import Login from './page/Login';
-import Info from './page/Info';
+import Info from './page/contact/Rcontact';
 import UpdateAbout from './page/about/Uabout';
-import EditInfo from './page/editPage/EditInfo';
+import EditContact from './page/contact/Econtact';
 import EditCover from './page/cover/Ecover';
 import EditProject from './page/projects/Eprojects';
 import EditEducation from './page/education/Eeducation';
@@ -25,6 +25,7 @@ import UpdateProject from './page/projects/Uproject';
 import UpdateSkill from './page/skills/USkill';
 import UpdateEducation from './page/education/Ueducation';
 import UpdateCover from './page/cover/Ucover';
+import UpdateContact from './page/contact/Ucontact';
 import DeleteProject from './page/projects/DeleteProject';
 import ReadMessage from './page/messages/Rmessage';
 import Auth from './component/routes/Private';
@@ -130,7 +131,10 @@ function App() {
                     <Info />
                 </Route>
                 <PrivateInfo path="/EditInfo">
-                    <EditInfo />
+                    <EditContact />
+                </PrivateInfo>
+                <PrivateInfo path="/contact/id/:id">
+                    <UpdateContact />
                 </PrivateInfo>
 
                 {/* MESSAGE */}
